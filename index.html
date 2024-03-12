@@ -16,6 +16,12 @@
   <link rel="icon" href="icon.ico">
 
   <style>
+    .center-text {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
     .row {
         display: flex;
         justify-content: center;
@@ -58,71 +64,48 @@
         width: 100%;
         height: 140px;
     }
-    .prompt-container {
-        width: 30%;
-        margin: 0 10px;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 20px;
-    }
-    .image-container, .glb-container {
-        width: 30%;
-        margin: 0 10px;
-    }
-    .image-container img {
-        width: 60%;
-        height: auto;
-    }
-    .glb-container model-viewer {
-        width: 100%;
-        height: 160px;
+    
+    .prompt-container,
+    .image-container-t,
+    .glb-container-t {
+      flex: 1;
+      max-width: 30%; 
+      text-align: center; 
+      font-family: "Times New Roman", Times, serif; 
+      font-size: 18px; 
     }
   </style>
 </head>
 <body>
   <section class="section">
 
-  <div class="container has-text-centered">
-    <!-- paper title -->
-    <p class="title is-3"> FDGaussian: Fast Gaussian Splatting via Geometric-aware Diffusion Model </p>
-    <!-- publication -->
-    <!-- <p class="subtitle is-4"> ICLR 2024 (Oral) </p> -->
-    <!-- authors -->
-    <!-- <p class="title is-5 mt-2"> 
-      <a href="https://me.kiui.moe/" target="_blank">Qijun Feng</a><sup>1</sup>, 
-      <a href="https://jiawei-ren.github.io/" target="_blank">Zhen Xing</a><sup>1</sup>, 
-      <a href="https://hangz-nju-cuhk.github.io/" target="_blank">Zuxuan Wu</a><sup>1</sup>, 
-      <a href="https://liuziwei7.github.io/" target="_blank">Yu-gang Jiang</a><sup>1</sup>,
-    </p> -->
-    <!-- affiliations -->
-    <!--<p class="subtitle is-5"> 
-      <sup>1</sup> Fudan University &nbsp;
-    </p> -->
-    <p class="title is-5 mt-2"> 
-      <a>Anonymous authors</a>
-    </p>
-    <!-- other links -->
-    <!-- <div class="is-flex is-justify-content-center">
-      <span class="icon-text mx-1">
-        <a class="button is-dark" href="https://arxiv.org/abs/2309.16653" role="button" target="_blank"> <span class="icon"> <ion-icon name="document-outline"></ion-icon> </span> <span> Arxiv </span>  </a> 
-      </span>
-      <span class="icon-text mx-1">
-        <a class="button is-dark" href="https://github.com/dreamgaussian/dreamgaussian" role="button" target="_blank"> <span class="icon"> <ion-icon name="logo-github"></ion-icon> </span> <span> Code </span> </a> 
-      </span>
-    </div> -->
-   
-  </div>
+    <div class="container has-text-centered">
+      <!-- paper title -->
+      <p class="title is-3"> FDGaussian: Fast Gaussian Splatting via Geometric-aware Diffusion Model </p>
+      
+      <div class="center-text"> Anonymous Authors </div>
+    </div>
+  
 
   <!-- main container -->   
-  
-    <p class="title is-3 mt-5 has-text-centered"> Novel View Generation and 3D Reconstruction </p>
-    <video muted autoplay loop> <source src="assets/display1.mp4" type="video/mp4"> </video>
-
+    <center>
+      <div style="max-width: 800px;">
+      <p class="title is-3 mt-5 has-text-centered"> Novel View Generation and 3D Reconstruction </p>
+      <video muted autoplay loop> <source src="assets/display1.mp4" type="video/mp4"> </video>
+      </div>
+    </center>
     <p class="title is-3 mt-5 has-text-centered"> Qualitative Comparison </p>
-    <video muted autoplay loop> <source src="assets/display2.mp4" type="video/mp4"> </video>
+    <center>
+      <div style="max-width: 800px;">
+      <video muted autoplay loop> <source src="assets/display2.mp4" type="video/mp4"> </video>
+      </div>
+    </center>
+
     
     <!-- 3d model viewer -->
     <p class="title is-3 mt-5 has-text-centered"> Interactive Results </p>
-    <div class="row">
+    <center>
+    <div class="row" style="max-width: 1000px;">
       <div class="image-container-row1">
         <img src="assets/panda.png" alt="panda">
       </div>
@@ -142,7 +125,7 @@
         <model-viewer src="assets/lamp.glb" poster="assets/image3.jpg" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="max-width: 1000px;">
       <div class="image-container-row2">
         <img src="assets/shark.png" alt="Image 1">
       </div>
@@ -162,7 +145,7 @@
           <model-viewer src="assets/clock.glb" poster="assets/image3.jpg" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="max-width: 1000px;">
       <div class="image-container-row3">
         <img src="assets/filesorter.jpg" alt="Image 1">
       </div>
@@ -182,60 +165,45 @@
         <model-viewer src="assets/table.glb" poster="assets/image3.jpg" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
       </div>
     </div>
-
-
+    </center>  
     <p class="title is-3 mt-5 has-text-centered"> Text-to-image-to-3D </p>
     
-    <div class="row">
-      <div class="prompt-container">
+    <div class="container" style="max-width: 1000px;">
+      <div class="row">
+        <div class="prompt-container">
           <p>A grey double sofa.</p>
-      </div>
-      <div class="image-container">
-          <img src="assets/sofa.png" alt="Image 1">
-      </div>
-      <div class="glb-container">
+        </div>
+        <div class="image-container-t">
+          <img src="assets/sofa.png" alt="Image 1" width="130px" height="auto">
+        </div>
+        <div class="glb-container-t">
           <model-viewer src="assets/sofa.glb" poster="assets/image1.jpg" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="prompt-container">
+      <div class="row">
+        <div class="prompt-container">
           <p>A basket of bread.</p>
-      </div>
-      <div class="image-container">
-          <img src="assets/bread.png" alt="Image 1">
-      </div>
-      <div class="glb-container">
+        </div>
+        <div class="image-container-t">
+          <img src="assets/bread.png" alt="Image 1" width="130px" height="auto">
+        </div>
+        <div class="glb-container-t">
           <model-viewer src="assets/bread.glb" poster="assets/image1.jpg" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="prompt-container">
+      <div class="row">
+        <div class="prompt-container">
           <p>A telephone in vintage style.</p>
-      </div>
-      <div class="image-container">
-          <img src="assets/telephone.png" alt="Image 1">
-      </div>
-      <div class="glb-container">
+        </div>
+        <div class="image-container-t">
+          <img src="assets/telephone.png" alt="Image 1" width="130px" height="auto">
+        </div>
+        <div class="glb-container-t">
           <model-viewer src="assets/telephone.glb" poster="assets/image1.jpg" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
       </div>
     </div>
-    <!-- citation -->
-    <!-- <div class="card mt-4">
-      <header class="card-header">
-        <p class="card-header-title"> Citation </p>
-      </header>
-      <div class="card-content is-size-5 has-text-left">
-<pre><code>@article{tang2023dreamgaussian,
-  title={DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation},
-  author={Tang, Jiaxiang and Ren, Jiawei and Zhou, Hang and Liu, Ziwei and Zeng, Gang},
-  journal={arXiv preprint arXiv:2309.16653},
-  year={2023}
-}</code></pre>
-      </div>
-    </div>
-  </div> -->
-
-
+    
   </section>
 </body>
 </html>
